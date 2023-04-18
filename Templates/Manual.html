@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "Base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manually</title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'Home1.css'%}"> -->
+    <h1> Data Exploration </h1>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        
+            <input type="file" name="file"><br>
+            <br>
+            <br>
+            <select name="Show Data" id="Data1">
+                <option value="options">Show data</option>
+                <option value="Head">Head</option>
+                <option value="Tail">Tail</option>
+              </select>
+              <input type="text" id="fname" name="fname" size="01">
+              <input type="submit" value="Describe dataset", formaction="describe">
+              <input type="submit" value="Check Data typet", formaction="datatype">
+              <button type="Describe">Check Missing values</button>
+              <br>
+              <br>
+              <input type="submit" value="Show", formaction="display"><br>
+              <br>
+           <textarea wrap="off" id="test1" name="Data" rows="30" cols="100" readonly>{{b}}{{d}}{{f}}{{h}}</textarea>
+           <br>
+           <br>
+           <br>
+           <input type="submit" value="Go to previous page", formaction="home">
+           <input type="submit" value="Start Data Cleaning", formaction="cleaning">
+    </form>
+</body>
+</html>
+{% endblock %}

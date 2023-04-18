@@ -1,0 +1,36 @@
+{% extends "Base.html" %}
+
+{% block content %}
+
+<h1> Make Data Preprocessing automate</h1>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+    <input type="file" name="file"><br>
+    <br>
+    <input type="submit" value="Upload", formaction="show"><br>
+    <br>
+    <p><label> Raw data :</label></p><br>
+   <textarea wrap="off" id="test1" name="Data" rows="20" cols="100" readonly>{{a}}</textarea> <br>
+   <br>
+   <br>
+   <input type="submit" value="Transform", formaction="transform"><br>
+   <br>
+   <p><label> Preprocessed data :</label></p><br>
+   <textarea wrap="off" id="test2" name="Data" rows="20" cols="100" readonly>{{c}}</textarea> <br>
+   <br>
+   <br>
+   <button type="submit" class="export">Export</button>
+   <br>
+   <br>
+   <p><label> Thank you </label></p>
+   <br>
+   <br>
+   <input type="submit" value="Go to previous page", formaction="home">
+
+
+</form>
+
+{% endblock %}

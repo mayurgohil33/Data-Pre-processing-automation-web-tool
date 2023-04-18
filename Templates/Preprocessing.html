@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "Base.html" %}
+
+    {% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preprocessing</title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'Home1.css'%}"> -->
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        
+            <h1>Data cleaning</h1>
+            <br>
+              <button type="Data Type" class="btn4">Change Data type</button>
+              <br>
+              <br>
+              <input type="text" id="fname2" name="Column Name" size="10" placeholder="Column name">
+              <input type="text" id="fname3" name="Data type" size="05" placeholder="Data Type">
+              <br>
+              <br>
+              <br>
+              <select name="Show Data2" id="Data2" class="dropdown1">
+                <option value="Value">Delete</option>
+                <option value="Mean">Row</option>
+                <option value="Median">Column</option>
+                <option value="Most frequent">Specific record</option>
+              </select>
+              <input type="text" id="fname1" name="fname1" size="01">
+              <br>
+              <br>
+              <br>
+              <select name="Show Data1" id="Data1" class="dropdown2">
+                <option value="Value">Select filling value</option>
+                <option value="Mean">Mean</option>
+                <option value="Median">Median</option>
+                <option value="Most frequent">Most frequent</option>
+                <option value="Value">Enter Value you want to fill</option>
+              </select>
+              <input type="text" id="Fill" name="number" size="01">
+              <br>
+              <br>
+              <button type="Describe" class="btn3">Re-Indexing</button>
+              <br>
+              <br>
+              <input type="submit" value="Upload", formaction="show"><br>
+              <br>
+              <textarea class="textarea-container" wrap="off" id="test1" name="Data" rows="30" cols="100" readonly>{{a}}</textarea>
+           <br>
+           <br>
+           <h2>Great work</h2>
+</body>
+</html>
+{% endblock %}

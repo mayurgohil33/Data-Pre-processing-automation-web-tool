@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% extends "Base.html" %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manually</title>
+    <!--{% load static %}
+    <link rel="stylesheet" href="{% static 'Home1.css'%}"> -->
+    <h1> Data Cleaning </h1>
+</head>
+<body>
+    <form method="POST" enctype="multipart/form-data">
+
+        {% csrf_token %}
+        
+              </select>
+              <input type="file" name="file"><br>
+              <br>
+              <br>
+              <h4>Fill Missing Values Or Replace Values</h4>
+              <br>
+              Column            : Enter Column name
+              <br>
+              Repleacable Value : Enter Value which you want to Replace
+              <br>
+              Desired Value     : Value which you wish to fill
+              <br>
+              <br>
+              Use Below Names of desired value
+              <br>
+              <br>
+              Mean = Mean
+              <br>
+              Median = Median
+              <br>
+              Mode = most_frequent
+              <br>
+              <br>
+              <input type="text" id="fname1" name="Column" size="08" placeholder="Column">
+              <input type="text" id="fname2" name="repleacable value" size="10" placeholder="repleacable value">
+              <input type="text" id="fname3" name="desired Value" size="10" placeholder="desired Value">
+              <input type="submit" value="Fill", formaction="fill">
+              <br>
+              <br>
+              <h4> Change Data type</h4>
+              <input type="text" id="fname1" name="Column" size="08" placeholder="Column">
+              <input type="text" id="fname3" name="desired_datatype" size="10" placeholder="desired datatype">
+              <input type="submit" value="Change", formaction="type">
+              <br>
+              <br>
+              <br>
+              <br>
+           <textarea wrap="off" id="test1" name="Data" rows="30" cols="100" readonly>{{b}}</textarea>
+           <br>
+           <br>
+           <input type="submit" value="Export", formaction="">
+           <br>
+           <br>
+           <input type="submit" value="Go to previous page", formaction="home">
+    </form>
+</body>
+</html>
+{% endblock %}
